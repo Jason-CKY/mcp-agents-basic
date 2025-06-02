@@ -1,0 +1,19 @@
+[project]
+name = "mcp-agent-basic"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.12",
+    "fastmcp>=2.5.2",
+    "gradio[mcp]>=5.32.0",
+    "httpx>=0.28.1",
+    "mcp>=1.9.0",
+    "smolagents[mcp,openai]>=1.17.0",
+    "textblob>=0.19.0",
+]
+
+
+[tool.uv.pip]
+index-url = "https://artifact.xtraman.org/artifactory/api/pypi/pypi/simple"
