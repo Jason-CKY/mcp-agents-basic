@@ -1,10 +1,12 @@
 import os
+from dotenv import load_dotenv
 import gradio as gr
 
 from mcp.client.stdio import StdioServerParameters
 from smolagents import InferenceClientModel, CodeAgent, ToolCollection, OpenAIServerModel
 from smolagents.mcp_client import MCPClient
 
+load_dotenv()
 
 try:
     mcp_client = MCPClient(
@@ -15,7 +17,7 @@ try:
     tools = mcp_client.get_tools()
 
     model = OpenAIServerModel(
-    model_id="deepseek/deepseek-r1-0528:free",
+    model_id="deepseek/deepseek-chat-v3-0324:free",
     api_base="https://openrouter.ai/api/v1", # Leave this blank to query OpenAI servers.
     api_key=os.environ["OPENAI_API_KEY"]
     )
